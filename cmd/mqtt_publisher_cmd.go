@@ -13,7 +13,7 @@ func StartMQTTPublisher() {
 	topic := os.Getenv("MQTT_DEFAULT_TOPIC")
 
 	for {
-		log.Println("MQTT PUB - Pushing")
+		log.Println("MQTT PUB - Publishing")
 		iot.Pub(topic, 1, []byte("send to broker"))
 		time.Sleep(time.Second * 2)
 	}

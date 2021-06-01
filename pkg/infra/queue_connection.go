@@ -14,8 +14,8 @@ type queueConnection struct {
 }
 
 func (q *queueConnection) Connect() error {
-	broker := os.Getenv("MQTT_BROKER_URL")
-	port := os.Getenv("MQTT_BROKER_PORT")
+	broker := os.Getenv("AMQP_BROKER_URL")
+	port := os.Getenv("AMQP_BROKER_PORT")
 	user := os.Getenv("AMQP_BROKER_USER")
 	password := os.Getenv("AMQP_BROKER_PASS")
 	queue := os.Getenv("DEFAULT_QUEUE")
@@ -42,6 +42,9 @@ func (q *queueConnection) Connect() error {
 		return err
 	}
 
+	q.ch = ch
+	q.conn = conn
+
 	return nil
 }
 
@@ -52,7 +55,7 @@ func (q queueConnection) Produce(exchange, routingKey string, mandatory, immedia
 		mandatory,
 		immediate,
 		amqp.Publishing{
-			ContentType: "plain/text",
+			ContentType: "text/plain",
 			Body:        data,
 		},
 	)

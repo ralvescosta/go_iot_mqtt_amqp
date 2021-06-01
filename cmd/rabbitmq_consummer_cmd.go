@@ -1,3 +1,5 @@
 package cmd
 
-func StartQueueConsummer() {}
+func StartQueueConsummer() {
+
+}
