@@ -12,6 +12,8 @@
   - Docker
   - Docker Compose
 
+- Configure the .env file in the root path
+
 - Create a instance of MQTT Broker and RabbitMQ Broker
 
   ```bash
