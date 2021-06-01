@@ -45,3 +45,15 @@
     ```bash
     make rabbitmq_consumer
     ```
+
+## Description
+
+In short, Internet of Things is interconnectivity between objects. To make this concept possible, have many technology behinds.
+
+This project implements a simple cloud computer exemplification to works with IoT. Before presenting the adopted approach we need to understand what is MQTT? MQ Telemetry Transport - MQTT, is a lightweight messaging protocol for sensors and small mobile devices optimized for TCP / IP networks, if you want to improve on the subject read [more](https://developer.ibm.com/articles/iot-mqtt-why-good-for-iot/)
+
+## Project Structure
+
+<div align="center">
+  <img src="./docs/fig.png" width="650"/>
+</div>
