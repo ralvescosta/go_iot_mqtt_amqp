@@ -14,11 +14,17 @@ func StartMQTTSubscriber() {
 	if err != nil {
 		panic(err)
 	}
+	defer func() {
+		iot.Defer()
+	}()
 
 	err = queue.Connect()
 	if err != nil {
 		panic(err)
 	}
+	defer func() {
+		queue.Defer()
+	}()
 
 	topic := os.Getenv("MQTT_DEFAULT_TOPIC")
 	iotHandler := handlers.IoTHandler{

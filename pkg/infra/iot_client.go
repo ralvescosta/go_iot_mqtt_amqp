@@ -56,6 +56,10 @@ func (iot ioTCliente) Pub(topic string, qos int, payload []byte) {
 	iot.client.Publish(topic, byte(qos), false, payload)
 }
 
+func (iot ioTCliente) Defer() {
+	iot.client.Disconnect(10)
+}
+
 func (iot ioTCliente) connectHandler(client mqtt.Client) {
 	fmt.Println("Connected")
 }

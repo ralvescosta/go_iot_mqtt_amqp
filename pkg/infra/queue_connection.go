@@ -62,10 +62,8 @@ func (q queueConnection) Produce(exchange, routingKey string, mandatory, immedia
 	return err
 }
 
-func (q queueConnection) Consume(queue, consumer string, autoAck, exclusive, noLocal, noWait bool, args amqp.Table) (<-chan amqp.Delivery, error) {
-	ch, err := q.ch.Consume(queue, consumer, autoAck, exclusive, noLocal, noWait, args)
-
-	return ch, err
+func (q queueConnection) Consume(queue, routingKey string) (<-chan amqp.Delivery, error) {
+	return q.ch.Consume(queue, routingKey, true, false, false, false, nil)
 }
 
 func (q queueConnection) Defer() {
