@@ -20,14 +20,11 @@ func main() {
 		go cmd.StartMQTTSubscriber()
 		go cmd.StartQueueConsummer()
 	case "mqtt_pub":
-		wg.Add(1)
-		go cmd.StartMQTTPublisher()
+		cmd.StartMQTTPublisher()
 	case "mqtt_sub":
-		wg.Add(1)
-		go cmd.StartMQTTSubscriber()
+		cmd.StartMQTTSubscriber()
 	case "rabbitmq_consumer":
-		wg.Add(1)
-		go cmd.StartQueueConsummer()
+		cmd.StartQueueConsummer()
 	default:
 		panic(errors.New("you ned to config the operantion mode"))
 	}
