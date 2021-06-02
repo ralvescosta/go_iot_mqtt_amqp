@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func StartQueueConsummer() {
+func StartDataConsummer() {
 	queue := infra.NewQueueConnection()
 
 	err := queue.Connect()

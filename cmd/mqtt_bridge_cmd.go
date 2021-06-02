@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func StartMQTTSubscriber() {
+func StartMQTTBridge() {
 	iot := infra.NewIoTClient()
 	queue := infra.NewQueueConnection()
 

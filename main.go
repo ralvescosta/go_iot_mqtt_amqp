@@ -16,15 +16,15 @@ func main() {
 	switch mode {
 	case "all":
 		wg.Add(3)
-		go cmd.StartMQTTPublisher()
-		go cmd.StartMQTTSubscriber()
-		go cmd.StartQueueConsummer()
-	case "mqtt_pub":
-		cmd.StartMQTTPublisher()
-	case "mqtt_sub":
-		cmd.StartMQTTSubscriber()
-	case "rabbitmq_consumer":
-		cmd.StartQueueConsummer()
+		go cmd.StartMQTTFakeIotDevice()
+		go cmd.StartMQTTBridge()
+		go cmd.StartDataConsummer()
+	case "fake_iot_device":
+		cmd.StartMQTTFakeIotDevice()
+	case "mqtt_bridge":
+		cmd.StartMQTTBridge()
+	case "data_consumer":
+		cmd.StartDataConsummer()
 	default:
 		panic(errors.New("you ned to config the operantion mode"))
 	}

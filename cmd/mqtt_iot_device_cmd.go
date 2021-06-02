@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func StartMQTTPublisher() {
+func StartMQTTFakeIotDevice() {
 	iot := infra.NewIoTClient()
 	iot.Connect()
 	defer func() {
