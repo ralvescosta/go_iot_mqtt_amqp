@@ -8,7 +8,7 @@ services:
       - 1883:1883
     
   rabbitmq:
-    image: rabbitmq:3-management
+    image: rabbitmq:3.6-management
     container_name: rabbitmq
     ports:
       - 5672:5672
