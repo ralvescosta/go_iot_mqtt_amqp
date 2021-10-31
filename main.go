@@ -20,10 +20,13 @@ func main() {
 		go cmd.StartMQTTBridge()
 		go cmd.StartDataConsummer()
 	case "fake_iot_device":
+		wg.Add(1)
 		cmd.StartMQTTFakeIotDevice()
 	case "mqtt_bridge":
+		wg.Add(1)
 		cmd.StartMQTTBridge()
 	case "data_consumer":
+		wg.Add(1)
 		cmd.StartDataConsummer()
 	default:
 		panic(errors.New("you ned to config the operantion mode"))
