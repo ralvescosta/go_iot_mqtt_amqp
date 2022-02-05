@@ -4,6 +4,8 @@
 
 # IoT With GoLang
 
+- [Article](https://ralvescosta.medium.com/simple-iot-messages-delivery-with-golang-1-b1ea64d7d3ae)
+
 ## Description
 
 In short, Internet of Things is interconnectivity between objects. To make this concept possible, have many technology behinds. Before presenting the adopted approach we need to know some IoT enabling technologies, one of them is MQTT. 
